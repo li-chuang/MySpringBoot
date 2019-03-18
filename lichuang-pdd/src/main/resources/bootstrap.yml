@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: stepThirdMall
+  http:
+    encoding:
+      force: true
+  aop:
+    proxy-target-class: true
+  cloud:
+    config:
+      profile: test  #远程配置用pro2
+      discovery:
+        enabled: true
+        service-id: step-config-server
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: task:${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    service-url:
+#      defaultZone: http://eurekaserve2.com:16004/eureka/
+      defaultZone: http://192.168.1.101:16003/eureka/
+#      defaultZone: http://10.0.12.142:16003/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+
+feign:
+  client:
+    config:
+      step-mall:
+        connectTimeout: 3000
+        readTimeout: 3000
+        loggerLevel: basic
+
+management:
+  security:
+    enabled: false
