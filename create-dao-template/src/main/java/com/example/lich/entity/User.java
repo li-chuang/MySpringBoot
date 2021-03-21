@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName("tb_user") //对应表名
+@TableName("sites") //对应表名
 public class User implements Serializable {
 
     //对应id，可不填
