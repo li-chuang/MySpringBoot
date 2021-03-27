@@ -1,4 +1,4 @@
-package com.example.lich;
+package com.lichuang.shiro;
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
