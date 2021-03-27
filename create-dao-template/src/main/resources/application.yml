@@ -11,9 +11,9 @@ spring:
 #配置Mybatis-Plus
 mybatis-plus:
   #配置扫描xml
-  mapper-locations: classpath*:mapper/*/*Mapper.xml
+  mapper-locations: classpath*:mapper/*Mapper.xml
   #配置实体扫描类
-  type-aliases-package: 自己的包路径.*.mapper
+  type-aliases-package: com.lichuang.shiro.mapper
   #逻辑删除配置
   global-config:
     sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
