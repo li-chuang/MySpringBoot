@@ -3,8 +3,19 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://42.192.60.154:3306/db_spider?serverTimezone=GMT%2B8
+    url: jdbc:mysql://42.192.60.154:3306/db_shiro?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: Li_Chuang&123456$
     driver-class-name: com.mysql.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
+
+#配置Mybatis-Plus
+mybatis-plus:
+  #配置扫描xml
+  mapper-locations: classpath*:mapper/*/*Mapper.xml
+  #配置实体扫描类
+  type-aliases-package: 自己的包路径.*.mapper
+  #逻辑删除配置
+  global-config:
+    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+    logic-delete-value: 1
+    logic-not-delete-value: 0
