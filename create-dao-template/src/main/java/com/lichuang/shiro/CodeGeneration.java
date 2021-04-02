@@ -29,9 +29,9 @@ public class CodeGeneration {
 
         // 自定义文件命名，注意 %s 会自动填充表实体属性！
         gc.setControllerName("%sController");
-        gc.setServiceName("%sService");
+        gc.setServiceName("I%sService");
         gc.setServiceImplName("%sServiceImpl");
-        gc.setMapperName("%sMapper");
+        gc.setMapperName("%sDao");
         gc.setXmlName("%sMapper");
         autoGenerator.setGlobalConfig(gc);
 
@@ -58,6 +58,7 @@ public class CodeGeneration {
         strategy.setSuperServiceClass(null);
         strategy.setSuperServiceImplClass(null);
         strategy.setSuperMapperClass(null);
+        strategy.setTablePrefix("tb_");
         autoGenerator.setStrategy(strategy);
 
         // 包配置
