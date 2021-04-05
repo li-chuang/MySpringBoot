@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://42.192.60.154:3306/db_shiro?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: Li_Chuang&123456$
+    driver-class-name: com.mysql.jdbc.Driver
+
+    #druid 数据源专有配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+mybatis:
+  type-aliases-package: com.lichuang.shiro.mapper
+  mapper-locations: classpath:mapper/*.xml
+  # 资源位置resources/mapper/*.xml
